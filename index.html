@@ -25,8 +25,62 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
     <style>
+      html {
+        scroll-behavior: smooth;
+      }
       .sora {
         font-family: "Sora", serif;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(30px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes zoomIn {
+        from {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .animate-fade-in {
+        animation: fadeIn 1s ease-out forwards;
+      }
+
+      .animate-slide-up {
+        animation: slideUp 1s ease-out forwards;
+      }
+
+      .animate-zoom-in {
+        animation: zoomIn 1s ease-out forwards;
+      }
+      /* for text */
+      .delay-200 {
+        animation-delay: 0.2s;
+      }
+      /* for img */
+      .delay-300 {
+        animation-delay: 0.3s;
       }
     </style>
     <title>nature-partner</title>
@@ -41,9 +95,9 @@
 
       <!-- Navigation Links -->
       <div class="hidden md:flex space-x-6 text-gray-700">
-        <a href="#" class="hover:text-green-600">Product</a>
-        <a href="#" class="hover:text-green-600">Services</a>
-        <a href="#" class="hover:text-green-600">Contact us</a>
+        <a href="#product" class="hover:text-green-600">Product</a>
+        <a href="#service" class="hover:text-green-600">Services</a>
+        <a href="#Contact" class="hover:text-green-600">Contact us</a>
       </div>
 
       <!-- Icons and Buttons -->
@@ -71,23 +125,24 @@
     </nav>
     <main class="container mx-auto">
       <!-- banner section -->
+
       <section
-        class="text-center mt-12 mb-12 flex flex-col justify-center items-center"
+        class="text-center mt-12 mb-12 flex flex-col justify-center items-center opacity-0 animate-fade-in"
       >
-        <h1 class="text-3xl md:text-6xl font-bold">
+        <h1 class="text-3xl md:text-6xl font-bold animate-slide-up">
           Freshness
-          <span class="text-[#179800]"
-            >You Can <br />
+          <span class="text-[#179800]">
+            You Can <br />
             Count
           </span>
           On, Prices You’ll Love!
         </h1>
-        <p class="text-gray-500 text-[16px]">
+        <p class="text-gray-500 text-[16px] animate-slide-up delay-200">
           Shop your daily essentials at unbeatable prices. From fresh produce to
           pantry <br />
           staples, we’ve got you covered every day!
         </p>
-        <div class="max-w-[1000px]">
+        <div class="max-w-[1000px] animate-zoom-in delay-300">
           <img
             src="img/hero-vegetables.png"
             class="w-full object-contain"
@@ -95,9 +150,8 @@
           />
         </div>
       </section>
-      <!-- Services Section -->
-
-      <section>
+      <!-- servicces section -->
+      <section id="service">
         <h1 class="text-[#179800] text-5xl mt-12 mb-12 ml-4">Services</h1>
 
         <!-- cards section -->
@@ -140,8 +194,64 @@
           </div>
         </div>
       </section>
+      <!-- add my section -->
+      <section id="" class="container bg-green-50 py-12 mb-24">
+        <div class="max-w-6xl mx-auto px-6">
+          <h2 class="text-3xl font-bold text-green-700 text-center mb-6">
+            Healthy Recipes
+          </h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <!-- Recipe Card 1 -->
+            <div class="bg-white shadow-md rounded-lg p-4">
+              <img src="img/pic1.jpeg" alt="Salad" class="rounded-md w-full" />
+              <h3 class="text-xl font-semibold mt-4">Fresh Garden Salad</h3>
+              <p class="text-gray-600 mt-2">
+                A refreshing mix of fresh greens, cherry tomatoes, and a light
+                dressing.
+              </p>
+              <a href="#" class="text-green-600 font-semibold mt-3 inline-block"
+                >View Recipe →</a
+              >
+            </div>
+
+            <!-- Recipe Card 2 -->
+            <div class="bg-white shadow-md rounded-lg p-4">
+              <img
+                src="img/pic2.webp"
+                alt="Vegetable Soup"
+                class="rounded-md w-full"
+              />
+              <h3 class="text-xl font-semibold mt-4">Hearty Vegetable Soup</h3>
+              <p class="text-gray-600 mt-2">
+                A warm and comforting bowl packed with seasonal vegetables.
+              </p>
+              <a href="#" class="text-green-600 font-semibold mt-3 inline-block"
+                >View Recipe →</a
+              >
+            </div>
+
+            <!-- Recipe Card 3 -->
+            <div class="bg-white shadow-md rounded-lg p-4">
+              <img
+                src="img/pic3.jpeg"
+                alt="Green Smoothie"
+                class="rounded-md w-full"
+              />
+              <h3 class="text-xl font-semibold mt-4">Green Detox Smoothie</h3>
+              <p class="text-gray-600 mt-2">
+                A nutrient-packed blend of spinach, banana, and almond milk.
+              </p>
+              <a href="#" class="text-green-600 font-semibold mt-3 inline-block"
+                >View Recipe →</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Popular Products -->
       <section
+        id="product"
         class="bg-[#EFEBE3] mb-12 flex flex-col justify-between items-center"
       >
         <h1 class="text-[#179800] text-5xl mt-12 mb-12 ml-4">
@@ -347,9 +457,9 @@
           </div>
         </div>
       </section>
-      <!-- footer -->
+      <!-- add my sedtion -->
     </main>
-    <footer class="mt-48 relative">
+    <footer id="Contact" class="mt-48 relative">
       <footer
         class="footer text-white bg-[#179800] text-base-content p-44 relative"
       >
